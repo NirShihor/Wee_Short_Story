@@ -70,6 +70,16 @@ app.use(function (req, res, next) {
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
 
-const PORT = process.env.PORT || 5060;
+//Before using heroku - server running locally
+// const PORT = process.env.PORT || 5060;
 
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+// app.listen(PORT, console.log(`Server started on port ${PORT}`));
+
+//server for heroku
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+app.listen(port, function () {
+  console.log("Server started successfully");
+});

@@ -10,6 +10,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "12.x"
+  },
   "dependencies": {
     "@riversun/simple-date-format": "^1.1.4",
     "@sentry/node": "^5.23.0",
