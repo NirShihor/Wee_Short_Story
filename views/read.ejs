@@ -1,6 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@riversun/simple-date-format@1.1.2/lib/simple-date-format.js"></script>
 <div class="greeting">
-    <!-- <img class="logo" src="/images/WSS logo.png" alt="logo"> -->
+    <img class="logo" src="/images/WSS logo.png" alt="logo">
     <!-- Greeting with User's name if logged in or generic if not  -->
     <p id="greet" class="lead mb-3"><%= name %></p>
 
@@ -83,6 +83,14 @@
 <br /><br />
 <% }) %>
 <style>
+    body {
+        background-image: url('/images/woodbackground2-min.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        padding: 0;
+    }
+
     .logo {
         width: 12rem;
         left: 5rem;
