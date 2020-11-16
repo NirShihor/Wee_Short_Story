@@ -1,0 +1,207 @@
+<div class='greeting'>
+    <img class="logo" src="images/WSS logo.png" alt="logo">
+    <p class='lead mb-3'> <%= name %></p>
+    <div class="hiddenButton">
+        <a href='/' class='homeButton''>Home Page</a>
+    </div>
+</div>
+<br><br><br><br><br><br><br>
+    <div class=' dashboardCenter'>
+            <h1 class='homeHeading mt-4'>Publish Your Story</h1>
+    </div>
+    <div class="publishMessage">
+        <%- include ('./partials/messages') %>
+    </div>
+
+
+    <div class="storyPublish">
+        <form class="publishFormAtt" action="" method="POST">
+            <label for="Write Your Story"></label>
+            <textarea class="publishForm" name="newStory" cols="30" rows="7" autofocus></textarea>
+            <br><br>
+            <select class="storyPage" name="genre">
+                <option selected="selected">Select a genre</option>
+                <option value="1">Crime</option>
+                <option value="2">Horror</option>
+                <option value="3">Love</option>
+                <option value="4">Science Fiction</option>
+                <option value="5">Other</option>
+            </select>
+            <br><br>
+            <input type="text" class="autherName" name="auther" placeholder="Your Name (not required)">
+            <br><br>
+            <input class="formButton" type="submit" value="Publish">
+        </form>
+    </div>
+
+    <style>
+        body {
+            background-image: url('/images/woodbackground2-min.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* Drop down story genre selection */
+        .storyPage {
+            height: 3em;
+            font-size: 10em;
+        }
+
+        .homeHeading {
+            font-family: 'typewriter_-_remington_riviRg';
+            font-size: 3.5em;
+            margin-top: 1em;
+        }
+
+        .dashboardCenter {
+            margin: auto;
+            text-align: center;
+        }
+
+        .flex-container {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .greeting {
+            float: right;
+            padding-right: 5em;
+            margin-top: 1em;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .lead {
+            font-family: 'typewriter_-_remington_riviRg';
+            color: rgb(48, 44, 44);
+            font-weight: 500;
+            font-size: 1.5em;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .btn {
+            color: #0a0a0a;
+            font-size: 0.8em;
+            color: cornsilk;
+            width: 8em;
+        }
+
+        @media (max-width: 800px) {
+            .greeting {
+                margin-top: -6em !important;
+                margin-right: -3em;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .homeHeading {
+                margin-top: -1em !important;
+            }
+        }
+
+        .autherName {
+            width: 20em;
+            height: 3em;
+            border-radius: 0.3em;
+            font-size: 0.8em;
+            margin: 0.2em;
+            padding: 0.2em;
+            border: black;
+            border-style: solid;
+            border-width: 0.1em;
+            padding-left: 1.5em;
+        }
+
+
+        /* Fade In Button  */
+
+        .hiddenButton {
+            animation: fadeIn ease 7s;
+            -webkit-animation: fadeIn ease 7s;
+            -moz-animation: fadeIn ease 7s;
+            -o-animation: fadeIn ease 7s;
+            -ms-animation: fadeIn ease 7s;
+        }
+
+        .formButton {
+            margin: auto;
+            height: 2.5em;
+            width: 10em;
+            font-size: 0.8em;
+            cursor: pointer;
+            border-radius: 0.6em;
+        }
+
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-ms-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .homeButton {
+            margin-top: 0em !important;
+        }
+
+        .logo {
+            width: 12rem;
+            left: 5rem;
+            position: absolute;
+            top: 2.5rem;
+        }
+
+        @media (max-width: 800px) {
+            .logo {
+                width: 10rem;
+                left: 1rem;
+                top: 1rem;
+            }
+        }
+    </style>

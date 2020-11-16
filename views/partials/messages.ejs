@@ -1,0 +1,99 @@
+<!-- Registration and login error messages -->
+
+<% if(typeof errors !== 'undefined') { %>
+<% errors.forEach(function(error) { %>
+<div class="alert alert-warning fade show" role="alert">
+  <%= error.msg %>
+  </button>
+</div>
+<% }); %>
+<% } %>
+
+<% if (success_msg != '') { %>
+<div class="alert alert-success fade show" role="alert">
+  <%= success_msg %>
+  </button>
+</div>
+<% } %>
+
+<% if (error_msg != '') { %>
+<div class="alert alert-warning fade show" role="alert">
+  <%= error_msg %>
+  </button>
+</div>
+<% } %>
+
+<% if (error != '') { %>
+<div class="alert alert-warning fade show" role="alert">
+  <%= error %>
+  </button>
+</div>
+<% } %>
+
+<!-- Password reset error messages -->
+
+<% if (error_reset_req != '') { %>
+<div class="alert alert-warning fade show" role="alert">
+  <%= error_reset_req %>
+  </button>
+</div>
+<% } %>
+
+<% if (success_mail_sent != '') { %>
+<div class="alert alert-success fade show" role="alert">
+  <%= success_mail_sent %>
+  </button>
+</div>
+<% } %>
+
+<% if (error_token != '') { %>
+<div class="alert alert-warning fade show" role="alert">
+  <%= error_token %>
+  </button>
+</div>
+<% } %>
+
+<% if (error_passwords_match != '') { %>
+<div class="alert alert-warning fade show" role="alert">
+  <%= error_passwords_match %>
+  </button>
+</div>
+<% } %>
+
+<% if (success_password_change != '') { %>
+<div class="alert alert-success fade show" role="alert">
+  <%= success_password_change %>
+  </button>
+</div>
+<% } %>
+
+<% if (success_logout_done != '') { %>
+<div class="alert alert-success fade show" role="alert">
+  <%= success_logout_done %>
+  </button>
+</div>
+<% } %>
+
+<% if (success_story_publish != '') { %>
+<div class="alert alert-success fade show" role="alert">
+  <%= success_story_publish %>
+  </button>
+</div>
+<% } %>
+
+<STYle>
+  .alert {
+    font-size: 1.4em;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.7em;
+  }
+
+  .alert-warning {
+    color: rgb(218, 89, 15);
+  }
+
+  .alert-success {
+    color: green;
+  }
+</STYle>

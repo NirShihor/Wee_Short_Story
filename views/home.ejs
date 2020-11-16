@@ -1,0 +1,189 @@
+<div class="greeting">
+    <!-- Greeting with User's name if logged in or generic if not  -->
+    <p id="greet" class="lead"><%= greeting %> <%= name%></p>
+</div>
+<br /><br /><br>
+
+<nav class="navbar">
+    <div class="navbar-collapse collapse show" id="navbarResponsive">
+        <% if (!loggedIn) { %>
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="read">Read</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="publish">Publish</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/register">Register</a>
+            </li>
+            <li class="nav-item nav-item-hide">
+                <a class="nav-link" href="/users/login">Login</a>
+            </li>
+        </ul>
+        <% } else { %>
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="read">Read</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="publish">Publish</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/logout">Logout</a>
+            </li>
+        </ul>
+        <% } %>
+
+        <style>
+            body {
+                background-image: url("/images/typewriter2-min.jpg");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+
+            .nav-link {
+                color: #110f0f;
+                font-size: 1.4em;
+            }
+
+            .nav-link:hover {
+                color: 39, 76, 131;
+                color: #48726b !important;
+            }
+
+            @media (max-width: 800px) {
+                .container {
+                    padding-top: 0em !important;
+                }
+            }
+
+            }
+
+
+
+            .logoutSuccess {
+                margin-top: 5em;
+                max-width: 20em;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 3em;
+            }
+
+            .navbar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: auto;
+                margin-top: 8em;
+                display: table;
+                font-size: 1.7em;
+                font-family: "typewriter_-_remington_riviRg";
+                font-weight: 900;
+                text-align: center;
+            }
+
+            .nav-link {
+                text-decoration: none;
+                color: rgb(20, 19, 19);
+            }
+
+            .nav-item {
+                list-style-type: none;
+                margin-top: 0.6em;
+            }
+
+            /* .greeting {
+                float: right;
+                padding-right: 12em;
+                margin-top: 7em;
+                text-align: center;
+                font-size: 0.5em;
+            } */
+
+            .greeting {
+                width: auto !important;
+                font-weight: 900;
+                float: right;
+                padding-right: 2rem;
+                margin-top: 1em;
+                text-align: center;
+                font-size: 1.5em;
+                color: black,
+            }
+
+
+            /* Welcome greeting at an angle */
+            .angle {
+                transform: rotate(34.5deg);
+            }
+
+            /* Welcome greeting straight on mobile */
+            @media (max-width: 1000) {
+                .angle {
+                    /* IE 9 */
+                    -ms-transform: rotate(0);
+                    transform: rotate(0);
+                }
+            }
+
+
+            /* iPhone SE */
+            @media (max-width: 600px) {
+                .greeting {
+                    padding-top: 5em;
+                    font-size: 2em;
+                    text-align: center;
+                }
+            }
+
+            /* iPad, iPhone 8,  iPhone 8 Pluse*/
+            @media (max-width: 900) {
+                .greeting {
+                    color: black;
+                    font-weight: 900;
+                    padding-top: 12em;
+                    font-size: 7em;
+                    text-align: center;
+                }
+            }
+
+
+            /* typing effect */
+            .lead {
+                font-family: "typewriter_-_remington_riviRg";
+                color: rgb(48, 44, 44);
+                font-weight: 500;
+                font-size: 1.5em;
+                overflow: hidden;
+                animation: typing 3s steps(30, end);
+                white-space: nowrap;
+            }
+
+
+            @keyframes typing {
+                from {
+                    width: 0;
+                }
+
+                to {
+                    width: 100%;
+                }
+            }
+
+            /* Handwriting google font */
+            #greet {
+                font-family: "Dancing Script", cursive;
+                color: rgb(51, 46, 46);
+            }
+        </style>
+    </div>
+</nav>

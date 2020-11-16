@@ -1,0 +1,453 @@
+<script src="https://cdn.jsdelivr.net/npm/@riversun/simple-date-format@1.1.2/lib/simple-date-format.js"></script>
+<div class="greeting">
+    <img class="logo" src="/images/WSS logo.png" alt="logo">
+    <!-- Greeting with User's name if logged in or generic if not  -->
+    <p id="greet" class="lead mb-3"><%= name %></p>
+
+    <div class="hiddenButton">
+        <a href="/" class="homeButton">Home Page</a>
+    </div>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br>
+<div class="dashboardCenter">
+    <h1 class="homeHeading mt-4">Get Reading!</h1>
+</div>
+<!-- TEMP -->
+<div class="navbarRead">
+    <a class="nav-link" href="/read">All</a>
+    <a class="nav-link" href="/read?genre=1">Crime</a>
+    <a class="nav-link" href="/read?genre=2">Horror</a>
+    <a class="nav-link" href="/read?genre=3">Love</a>
+    <a class="nav-link" href="/read?genre=4">Science-Fiction</a>
+    <a class="nav-link" href="/read?genre=5">Other</a>
+    <!-- Add 'My Stories' to navbar if user is logged in -->
+    <% if(loggedIn){ %>
+    <a class="nav-link" href="/read/mystories">My Stories</a>
+    <% } %>
+</div>
+<div class="publishMessage">
+    <%- include ('./partials/messages') %>
+</div>
+
+<br />
+<% theStories.forEach(function(story){ %>
+
+<div class="story">
+    <% if (!genre) {%>
+    <p class="genre"><%= story.storyGenre %></p>
+    <% } %>
+    <p><%= story.story %></p>
+
+    <% if (story.auther) {%>
+
+    <!-- Display auther name -->
+    <p class="authersign"><%= story.auther %></p>
+
+    <!-- If auther didn't not sign display 'Anonymous' -->
+    <% } else { %>
+    <p class="authersign">Anonymous</p>
+    <% } %>
+    <!-- Display genre only in All link-->
+    <p class="authersign datesign">
+        <!-- Display timestamp Creation Date -->
+        <% const parseDate = Date.parse(story.createdAt); %> <% var newDate = new
+        Intl.DateTimeFormat('en-GB', { year: 'numeric', month: 'short', day:
+        '2-digit'}).format(parseDate); %> <%= newDate %>
+
+        <!-- If user is logged in and user ID is the same as storyUserId then create delete button -->
+        <div class="deleteButton">
+            <% if ((loggedIn) && (userId===story.userId)) {%>
+            <div class="firstButtonDel">
+                <button class="firstDelete" onclick="document.getElementById('id01').style.display='block'">
+                    Delete Story
+                </button>
+            </div>
+            <% } %>
+        </div>
+    </p>
+</div>
+<div id="id01" class="modal">
+    <!-- Using method-override to create delete request -->
+    <form class="modal-content" action="/<%= story.id %>?_method=DELETE" method="POST">
+        <div class="modal-container">
+            <p>Are you sure you want to delete your story?</p>
+
+            <div class="clearfix">
+                <button type="button" class="cancelbtn" onclick="modal.style.display='none'">Cancel</button>
+                <!-- Story delete button -->
+                <button type="submit" class="deletebtn">Delete</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br /><br />
+<% }) %>
+<style>
+    .logo {
+        width: 12rem;
+        left: 5rem;
+        position: absolute;
+        top: 2.5rem;
+    }
+
+    @media (max-width: 800px) {
+        .logo {
+            width: 10rem;
+            left: 1rem;
+            top: 1rem;
+        }
+    }
+
+    .homeHeading {
+        font-family: "typewriter_-_remington_riviRg";
+        font-size: 3.5em;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .navbarRead {
+        /* display: flex; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        font-size: xx-large;
+        font-family: "typewriter_-_remington_riviRg";
+        font-weight: 900;
+        text-align: center;
+    }
+
+    @media (max-width: 800px) {
+        .navbarRead {
+            display: block;
+            font-size: 170%
+        }
+    }
+
+    .nav-link:link {
+        text-decoration: none;
+        color: rgb(20, 19, 19);
+        display: inline-block;
+        padding: 0.5em;
+    }
+
+    .nav-link:visited {
+        color: rgb(20, 19, 19);
+        text-decoration: underline;
+    }
+
+    .nav-link:hover {
+        color: #48726b;
+    }
+
+    /* Underline on clicked stroy genre link on read page */
+    .active {
+        text-decoration-line: underline !important;
+        text-decoration-thickness: 0.2rem;
+        color: rgb(20, 19, 19);
+    }
+
+
+
+    @media (max-width: 800px) {
+        .navbarRead {
+            margin: auto
+        }
+    }
+
+    .dashboardCenter {
+        margin: auto;
+        text-align: center;
+    }
+
+    .greeting {
+        width: auto !important;
+        float: right;
+        padding-right: 2rem;
+        margin-top: 1em;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .lead {
+        font-family: "typewriter_-_remington_riviRg";
+        color: rgb(48, 44, 44);
+        font-weight: 500;
+        font-size: 1.5em;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    /* Genere heading on all links other than "All" */
+    .genreHeading {
+        font-family: "typewriter_-_remington_riviRg";
+        text-align: center;
+        font-size: 1.4em;
+        color: #48726b
+    }
+
+    /* Story genre heading in 'All' link */
+    .genre {
+        text-align: center;
+        font-family: "typewriter_-_remington_riviRg";
+        font-size: 1.3em;
+    }
+
+    @media (max-width: 800px) {
+        .greeting {
+            margin-top: -3em !important;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .homeHeading {
+            margin-top: 2em !important;
+        }
+    }
+
+    /* Fade In Button  */
+
+    .hiddenButton {
+        animation: fadeIn ease 7s;
+        -webkit-animation: fadeIn ease 7s;
+        -moz-animation: fadeIn ease 7s;
+        -o-animation: fadeIn ease 7s;
+        -ms-animation: fadeIn ease 7s;
+    }
+
+    .authersign {
+        font-family: "Dancing Script", cursive;
+        font-size: 1.2em;
+        text-align: right;
+        margin-bottom: 0.5em;
+        margin-right: 1.3em;
+    }
+
+    .datesign {
+        font-size: 0.8em;
+        margin-right: 2em
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-moz-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-o-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-ms-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Delete button */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Set a style for delete button */
+
+    .deleteButton {
+        text-align: center;
+        margin: auto;
+    }
+
+    .firstDelete {
+        margin: auto;
+        padding: 2em;
+    }
+
+    button {
+        background-color: #bb3413;
+        color: white;
+        padding: 14px 20px;
+        margin: auto;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    button:hover {
+        opacity: 1;
+    }
+
+    /* @media (max-width: 800px) {
+        .firstButtonDelete {
+            padding;
+        }
+    } */
+
+
+    .firstDelete {
+        padding: 1em;
+        border-radius: 0.5em;
+        float: left;
+        margin-top: -5.5em;
+    }
+
+    /* Add a color to the cancel button */
+    .cancelbtn {
+        background-color: #ccc;
+        color: black;
+        padding: 1em;
+        border-radius: 0.5em;
+        margin: 1em;
+    }
+
+    /* Add a color to the delete button */
+    .deletebtn {
+        background-color: #f44336;
+        padding: 1em;
+        border-radius: 0.5em;
+        margin: 1em;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 99;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Enable scroll if needed */
+        background-color: rgba(71, 78, 93, 0.8);
+        /* padding-top: 50px; */
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #f2eeee;
+        margin: 30% auto 15% auto;
+        /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 30em;
+        /* Could be more or less, depending on screen size */
+        z-index: 99;
+        position: relative;
+    }
+
+    @media (max-width: 800px) {
+        .modal-content {
+            width: 80%;
+            margin-top: 10em;
+        }
+    }
+
+    .modal-container {
+        text-align: center;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+            "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+    }
+
+    /* Style the horizontal ruler */
+    hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+    }
+
+    /* The Modal Close Button (x) */
+    .close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #f44336;
+        cursor: pointer;
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    /* Change styles for cancel button and delete button on extra small screens */
+    @media screen and (max-width: 300px) {
+
+        .cancelbtn,
+        .deletebtn {
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        // Underline to remain in navbar after click using URL
+        jQuery(function ($) {
+            var path = window.location
+                .href; // because the 'href' property of the DOM element is the absolute path
+            $('.nav-link').each(function () {
+                if (this.href === path) {
+                    $(this).addClass('active');
+                }
+            });
+        });
+    });
+
+
+
+    // <!-- Button warning cancel by clicking outside the message area -->
+    // Get the modal
+    var modal = document.getElementById("id01");
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
