@@ -8,7 +8,7 @@ body {
 
 @media (max-width: 900px) {
   body {
-    background-size: auto;
+    background-size: 800px;
     background-repeat: repeat-y;
   }
 }
@@ -160,7 +160,7 @@ body {
 
 @media (max-width: 800px) {
   .story {
-    width: 17em;
+    width: 14em;
   }
 }
 
