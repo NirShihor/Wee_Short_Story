@@ -15,6 +15,7 @@ const StorySchema = new mongoose.Schema(
       unique: true,
       required: true,
       minlength: 20,
+      maxlength: 250,
     },
     auther: {
       type: String,
