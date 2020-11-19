@@ -189,7 +189,6 @@ body {
 /* iPhone SE */
 @media (max-width: 600px) {
   .greeting {
-    padding-top: 3em;
     font-size: 2em;
     text-align: center;
     margin: auto;
@@ -201,7 +200,6 @@ body {
   .greeting {
     color: black;
     font-weight: 900;
-    padding-top: 12em;
     font-size: 7em;
     text-align: center;
   }
