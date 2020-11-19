@@ -228,5 +228,5 @@ body {
 }
 
 .formButton {
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
 }
