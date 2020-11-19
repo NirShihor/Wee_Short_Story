@@ -227,6 +227,6 @@ body {
   }
 }
 
-button {
+.formButton {
   -webkit-appearance: none;
 }
