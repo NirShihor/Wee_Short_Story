@@ -226,3 +226,7 @@ body {
     margin-top: -25em;
   }
 }
+
+button {
+  -webkit-appearance: none;
+}
