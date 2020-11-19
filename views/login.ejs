@@ -1,15 +1,14 @@
 <div class="greeting">
   <img class="logo" src="/images/WSS logo.png" alt="logo">
   <div class="hiddenButton">
-    <a href='/' class='homeButton''>Home Page</a>
+    <a href="/" class="homeButton">Home Page</a>
   </div>
 </div>
-
 <div class="card">
   <div class="dashboardCentre">
     <h1> <i class="fas fa-user homeHeading"></i> Login</h1>
   </div>
-  
+
   <div class="outerForm">
     <%- include ('./partials/messages') %>
     <form action="/users/login" method="POST">
@@ -28,7 +27,7 @@
   </div>
   <div class="register">
     <p class="registerForgot">
-      Don' t Have An Account? <a class="login" href="/users/register">Register</a>
+      Don't Have An Account? <a class="login" href="/users/register">Register</a>
     </p>
     <p class="registerForgot">
       Forgot Your Password? <a class="login" href="/users/forgot">Reset</a>
@@ -37,6 +36,10 @@
 </div>
 
 <style>
+  body {
+    margin-top: -8em !important;
+  }
+
   .heading {
     text-align: center;
     margin-top: 16em;
@@ -49,6 +52,7 @@
   .card {
     margin: auto;
     width: 30%;
+    margin-top: 20em;
   }
 
   .outerForm {
@@ -130,20 +134,6 @@
     }
   }
 
-  @media (max-width: 800px) {
-    .hiddenButton {
-      margin-top: -8rem;
-      margin-right: -4rem;
-    }
-  }
-
-  @media (max-width: 570) {
-    .hiddenButton {
-      margin-top: -8rem;
-      margin-right: -10rem;
-    }
-  }
-
   @media (max-width: 600) {
     .outerForm {
       max-width: 15rem;
@@ -168,7 +158,24 @@
     margin-top: 10em;
   }
 
+  @media (max-width: 800px) {
+    .dashboardCentre {
+      margin-top: 30em;
+    }
+  }
+
+
   .homeHeading {
     text-align: center !important;
+  }
+
+  .hiddenButton {
+    margin-top: -5em;
+  }
+
+  @media (max-width: 800px) {
+    .hiddenButton {
+      margin-top: -10em;
+    }
   }
 </style>
