@@ -216,7 +216,7 @@ router.post("/publish", function (req, res, next) {
   } else if (req.isAuthenticated() && story.length > 250) {
     req.flash("error_msg", "Your story is too long");
   }
-  return res.redirect("/publish");
+  return res.redirect("/read");
 });
 
 module.exports = router;
