@@ -209,14 +209,14 @@ router.post("/publish", function (req, res, next) {
       "success_story_publish",
       "Your story has been published successfully!"
     );
-    return res.redirect("/publish");
+    return res.redirect("/read");
     // Message user if story is too short or too long
   } else if (req.isAuthenticated() && story.length < 5) {
     req.flash("error_msg", "Your story is too short");
   } else if (req.isAuthenticated() && story.length > 250) {
     req.flash("error_msg", "Your story is too long");
   }
-  return res.redirect("/read");
+  return res.redirect("/publish");
 });
 
 module.exports = router;
