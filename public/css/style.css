@@ -197,7 +197,7 @@ body {
 
 @media (max-width: 600px) {
   #greet {
-    margin-top: 8em !important;
+    margin-top: 6em !important;
   }
 }
 
