@@ -55,6 +55,16 @@
          body {
             background: url("/images/woodbackground2-min.jpg");
         }
+          /* fit whole background image into small screen */
+  @media (max-width: 768px) {
+    body {
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+    }
+  }
+
  .heading { text-align: center; margin-top:
         4em; } .lead { margin-top: 0.5em !important; } .card { margin: auto; width: 30%; } .outerForm { border: 3px
         solid green !important; padding: 0.6em 2em 2em 2em; border-radius: 0.5em; } .form { width: 100%; text-align:

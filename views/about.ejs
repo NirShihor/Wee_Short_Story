@@ -36,6 +36,17 @@
             background: url("/images/woodbackground2-min.jpg");
         }
 
+        /* fit whole background image into small screen */
+        @media (max-width: 768px) {
+            body {
+                -webkit-background-size: contain;
+                -moz-background-size: contain;
+                -o-background-size: contain;
+                background-size: contain;
+            }
+        }
+
+
         .aboutWSS {
             width: 35em;
             background-color: white;

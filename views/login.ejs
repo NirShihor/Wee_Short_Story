@@ -41,6 +41,16 @@
     margin-top: -8em !important;
   }
 
+  /* fit whole background image into small screen */
+  @media (max-width: 768px) {
+    body {
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+    }
+  }
+
   .heading {
     text-align: center;
     margin-top: 16em;
