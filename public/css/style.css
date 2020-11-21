@@ -4,12 +4,14 @@ body {
   background-attachment: fixed;
   background-size: cover;
   padding: 0;
+  overflow-x: hidden;
 }
 
 @media (max-width: 900px) {
   body {
     background-size: 800px;
     background-repeat: repeat-y;
+    overflow-x: hidden;
   }
 }
 
