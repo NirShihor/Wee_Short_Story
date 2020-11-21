@@ -11,7 +11,7 @@ body {
   body {
     background-size: 800px;
     background-repeat: repeat-y;
-    overflow-x: hidden;
+    overflow: hidden;
   }
 }
 
