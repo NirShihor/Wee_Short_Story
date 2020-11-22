@@ -195,23 +195,25 @@ body {
     font-size: 2em;
     text-align: center;
     margin: auto;
+    float: center;
+    padding-right: 5rem;
   }
 }
 
 @media (max-width: 600px) {
   #greet {
     margin-top: 6em !important;
+    /* margin-left: -8em; */
   }
 }
 
 /* iPad, iPhone 8,  iPhone 8 Pluse*/
-@media (max-width: 900) {
+@media (max-width: 600) {
   .greeting {
     color: black;
     font-weight: 900;
     font-size: 7em;
     text-align: center;
-  }
 }
 
 .lead {
