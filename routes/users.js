@@ -150,9 +150,8 @@ router.post("/forgot", function (req, res, next) {
           //createTransport is part of nodemailer
           service: "Gmail",
           auth: {
-            // TEMP
             user: "nirshihor@gmail.com",
-            pass: GOOGLE_PASS, //Setting password through terminal: $ export GMAILPW=<password>
+            pass: process.env.GMAILPW, //Setting password through terminal: $ export GMAILPW=<password>
           },
         });
         var mailOptions = {
