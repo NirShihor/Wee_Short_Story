@@ -196,7 +196,7 @@ body {
     text-align: center;
     margin: auto;
     float: center;
-    padding-right: 0rem;
+    margin-top: 3em !important;
   }
 }
 
