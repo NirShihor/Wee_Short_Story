@@ -196,7 +196,7 @@ body {
     text-align: center;
     margin: auto;
     float: center;
-    padding-right: 4rem;
+    padding-right: 0rem;
   }
 }
 
@@ -211,16 +211,6 @@ body {
   }
 }
 
-/* iPad, iPhone 8,  iPhone 8 Pluse*/
-@media (max-width: 600) {
-  .greeting {
-    color: black;
-    font-weight: 900;
-    font-size: 7em;
-    text-align: center;
-    padding-right: 2 !important;
-  }
-}
 .lead {
   margin-top: 0.5em !important;
 }
