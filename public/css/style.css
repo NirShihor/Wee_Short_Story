@@ -218,6 +218,8 @@ body {
 @media (max-width: 900) {
   .lead {
     margin-top: 5em;
+    text-align: center !important;
+    margin: auto;
   }
 }
 
