@@ -200,6 +200,10 @@ body {
   }
 }
 
+.smallButton {
+  background-color: grey;
+}
+
 @media (max-width: 600px) {
   #greet {
     margin-top: 6em !important;
