@@ -218,8 +218,9 @@ body {
     font-weight: 900;
     font-size: 7em;
     text-align: center;
+    padding-right: 2 !important;
+  }
 }
-
 .lead {
   margin-top: 0.5em !important;
 }
@@ -236,6 +237,8 @@ body {
   }
 }
 
-.formButton {
-  -webkit-appearance: none !important;
+@media (max-width: 900) {
+  .formButton {
+    -webkit-appearance: none !important;
+  }
 }
