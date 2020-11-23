@@ -4,7 +4,6 @@ const passport = require("passport");
 const bcrypt = require("bcryptjs");
 const async = require("async");
 const nodemailer = require("nodemailer");
-const { google } = require("googleapis");
 const crypto = require("crypto"); //Installation not required. Part of node js.
 const path = require("path");
 require("dotenv").config({ path: path.resolve("routes/.env") });
@@ -121,55 +120,6 @@ router.get("/forgot", function (req, res) {
 });
 
 // Forgot Password Handle
-// const CLIENT_ID =
-//   "900272838502-8hl5p6i25gjirv5nfon2vm5d10gtokbb.apps.googleusercontent.com";
-// const CLIENT_SECRET = "e0JPW2TfE4bHbcG2JyWUen4m";
-// const REDIRECT_URI = "https://developers.google.com/oauthplayground";
-// const REFRESH_TOKEN =
-//   "1//04QWrg-UMvH2SCgYIARAAGAQSNwF-L9IrE5hERFy1N5K8dVUSmXdId2Pep_18cK133mMeHAoMOgxl7OWsMIjnYuONAoHyk_ZhgMM";
-// const oAuth2Client = new google.auth.OAuth2(
-//   CLIENT_ID,
-//   CLIENT_SECRET,
-//   REDIRECT_URI
-// );
-
-// async function sendMail() {
-//   try {
-//     const accessToken = await oAuth2Client.getAccessToken();
-
-//     const transport = nodemailer.createTransport({
-//       service: "gmail",
-//       auth: {
-//         type: "OAuth2",
-//         user: "nirshihor@gmail.com",
-//         clientId: CLIENT_ID,
-//         clientSecret: CLIENT_SECRET,
-//         refreshToken: REFRESH_TOKEN,
-//         accessToken: accessToken
-//       },
-//     });
-
-// const mailOptions = {
-//   from: "Wee Short Story <nirshihor@gmail.com>",
-//   to: user.mail,
-//   subject: "WSS Password Reset",
-//   text:
-//     "You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n" +
-//     "Please click on the following link, or paste this into your browser to complete the process:\n\n" +
-//     "http://" +
-//     req.headers.host +
-//     "/users/reset/" +
-//     token +
-//     "\n\n" +
-//     "If you did not request this, please ignore this email and your password will remain unchanged.\n",
-// }
-
-//   } catch (error) {
-//     return error;
-//   }
-// }
-
-// oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 router.post("/forgot", function (req, res, next) {
   async.waterfall(
     [
