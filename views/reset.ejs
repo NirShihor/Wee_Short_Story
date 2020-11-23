@@ -1,145 +1,153 @@
-    <div class=' outerContainer'>
-        <div class="card">
-            <h1 class="heading"><i class="fas fa-user-plus"></i>Reset Password</h1>
-            <div class="outerForm">
-                <form action='/users/reset/<%= token %>' class='form' method='POST'>
-                    <br><br>
-                    <%- include ('./partials/messages') %>
-                    <div class='form-group'>
-                        <input type='password' name='password' value='' class='form-control' autofocus='autofocus'
-                            placeholder='New Password' />
-                    </div>
-                    <div class='form-group'>
-                        <input type='password' name='confirm' value='' class='form-control'
-                            placeholder='Confirm Password' />
-                    </div>
-                    <div class='form-group'>
-                        <div class="buttonFrame">
-                            <button type='submit' class='formButton smallButton'>Reset Password</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+   <div class="greeting">
+       <img class="logo" src="/images/WSS logo.png" alt="logo">
+       <div class="hiddenButton">
+           <a href='/' class='homeButton''>Home Page</a>
     </div>
-    </div>
+  </div>
+  <div class=' row'>
 
-    <style>
-        body {
-            background: url("/images/woodbackground2-min.jpg");
-        }
+               <div class=' outerContainer'>
+                   <div class="card">
+                       <h1 class="heading"><i class="fas fa-user-plus"></i>Reset Password</h1>
+                       <div class="outerForm">
+                           <form action='/users/reset/<%= token %>' class='form' method='POST'>
+                               <br><br>
+                               <%- include ('./partials/messages') %>
+                               <div class='form-group'>
+                                   <input type='password' name='password' value='' class='form-control'
+                                       autofocus='autofocus' placeholder='New Password' />
+                               </div>
+                               <div class='form-group'>
+                                   <input type='password' name='confirm' value='' class='form-control'
+                                       placeholder='Confirm Password' />
+                               </div>
+                               <div class='form-group'>
+                                   <div class="buttonFrame">
+                                       <button type='submit' class='formButton smallButton'>Reset Password</button>
+                                   </div>
+                               </div>
+                           </form>
+                       </div>
+                   </div>
+               </div>
+       </div>
 
-        /* fit whole background image into small screen */
-        @media (max-width: 768px) {
-            body {
-                -webkit-background-size: contain;
-                -moz-background-size: contain;
-                -o-background-size: contain;
-                background-size: contain;
-            }
-        }
+       <style>
+           body {
+               background: url("/images/woodbackground2-min.jpg");
+           }
+
+           /* fit whole background image into small screen */
+           @media (max-width: 768px) {
+               body {
+                   -webkit-background-size: contain;
+                   -moz-background-size: contain;
+                   -o-background-size: contain;
+                   background-size: contain;
+               }
+           }
 
 
-        .col-md-4 {
-            text-align: center;
-            margin: auto;
-        }
+           .col-md-4 {
+               text-align: center;
+               margin: auto;
+           }
 
-        @media (max-width: 800px) {
-            .row {
-                max-width: 20em;
-                text-align: center;
-                margin: auto;
-            }
-        }
+           @media (max-width: 800px) {
+               .row {
+                   max-width: 20em;
+                   text-align: center;
+                   margin: auto;
+               }
+           }
 
-        .heading {
-            margin-top: 7em;
-        }
+           .heading {
+               margin-top: 7em;
+           }
 
-        .col-md-4 {
-            text-align: center;
-            margin: auto;
-        }
+           .col-md-4 {
+               text-align: center;
+               margin: auto;
+           }
 
-        @media (max-width: 800px) {
-            .row {
-                max-width: 20em;
-                text-align: center;
-                margin: auto;
-            }
-        }
+           @media (max-width: 800px) {
+               .row {
+                   max-width: 20em;
+                   text-align: center;
+                   margin: auto;
+               }
+           }
 
-        .outerForm {
-            border: 3px solid green !important;
-            padding: 0.6em 2em 2em 2em;
-            border-radius: 0.5em;
-        }
+           .outerForm {
+               border: 3px solid green !important;
+               padding: 0.6em 2em 2em 2em;
+               border-radius: 0.5em;
+           }
 
-        .form {
-            width: 100%;
-            text-align: left;
-        }
+           .form {
+               width: 100%;
+               text-align: left;
+           }
 
-        input {
-            width: 100%;
-            height: 2.5em;
-            padding-left: 1em;
-            margin-top: 1em;
-            margin-bottom: 1em;
-            font-size: 1em;
-        }
+           input {
+               width: 100%;
+               height: 2.5em;
+               padding-left: 1em;
+               margin-top: 1em;
+               margin-bottom: 1em;
+               font-size: 1em;
+           }
 
-        label {
-            font-size: 1.2em;
-        }
+           label {
+               font-size: 1.2em;
+           }
 
-        .formButton {
-            margin: auto;
-            height: 2.5em;
-            width: 10em;
-            font-size: 0.8em;
-            cursor: pointer;
-            border-radius: 0.6em;
-        }
+           .formButton {
+               margin: auto;
+               height: 2.5em;
+               width: 10em;
+               font-size: 0.8em;
+               cursor: pointer;
+               border-radius: 0.6em;
+           }
 
-        .register {
-            padding-left: 2.5em;
-            font-size: 1.2em;
-            color: #375c1a;
-            font-weight: 900;
-            font-size: 1.3em;
-        }
+           .register {
+               padding-left: 2.5em;
+               font-size: 1.2em;
+               color: #375c1a;
+               font-weight: 900;
+               font-size: 1.3em;
+           }
 
-        .buttonFrame {
-            text-align: center;
-        }
+           .buttonFrame {
+               text-align: center;
+           }
 
-        .login {
-            text-decoration: none;
-            color: #4d4d7c;
-        }
+           .login {
+               text-decoration: none;
+               color: #4d4d7c;
+           }
 
-        .card {
-            margin: auto;
-            width: 30%;
-        }
+           .card {
+               margin: auto;
+               width: 30%;
+           }
 
-        @media (max-width: 800px) {
-            .heading {
-                margin-top: 2.5em;
-            }
-        }
+           @media (max-width: 800px) {
+               .heading {
+                   margin-top: 2.5em;
+               }
+           }
 
-        @media (max-width: 800px) {
-            .card {
-                width: 24em;
-            }
-        }
+           @media (max-width: 800px) {
+               .card {
+                   width: 24em;
+               }
+           }
 
-        @media (max-width: 800px) {
-            .hiddenButton {
-                margin-top: -5em !important;
-            }
-        }
-    </style>
+           @media (max-width: 800px) {
+               .hiddenButton {
+                   margin-top: -5em !important;
+               }
+           }
+       </style>

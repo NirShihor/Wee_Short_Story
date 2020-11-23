@@ -153,9 +153,6 @@ router.post("/forgot", function (req, res, next) {
             user: "nirshihor@gmail.com",
             pass: process.env.GMAILPW, //Setting password through terminal: $ export GMAILPW=<password>
           },
-          tls: {
-            rejectUnautherized: false,
-          },
         });
         var mailOptions = {
           //mailOption - what the users sees when email sent to them
