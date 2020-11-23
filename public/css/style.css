@@ -213,6 +213,7 @@ body {
 
 .lead {
   margin-top: 0.5em !important;
+  color: rgb(9, 65, 150);
 }
 
 @media (max-width: 900) {
