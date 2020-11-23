@@ -156,10 +156,10 @@ router.post("/forgot", function (req, res, next) {
             user: "nirshihor@gmail.com",
             clientId:
               "900272838502-8hl5p6i25gjirv5nfon2vm5d10gtokbb.apps.googleusercontent.com",
-            clientSecret: "e0JPW2TfE4bHbcG2JyWUen4m",
+            // TEMP
+            clientSecret: process.env.CLIENT_SECRET,
             refreshToken:
               "1//04QWrg-UMvH2SCgYIARAAGAQSNwF-L9IrE5hERFy1N5K8dVUSmXdId2Pep_18cK133mMeHAoMOgxl7OWsMIjnYuONAoHyk_ZhgMM",
-            // accessToken: oAuth2Client.getAccessToken(),
           },
         });
         var mailOptions = {
