@@ -23,7 +23,7 @@
                                </div>
                                <div class='form-group'>
                                    <div class="buttonFrame">
-                                       <button type='submit' class='formButton smallButton'>Reset Password</button>
+                                       <input type='Submit' class='formButton smallButton'></input>
                                    </div>
                                </div>
                            </form>
@@ -33,121 +33,165 @@
        </div>
 
        <style>
-           body {
-               background: url("/images/woodbackground2-min.jpg");
-           }
+  body {
+    background: url("/images/woodbackground2-min.jpg");
+    margin-top: -8em !important;
+  }
 
-           /* fit whole background image into small screen */
-           @media (max-width: 768px) {
-               body {
-                   -webkit-background-size: contain;
-                   -moz-background-size: contain;
-                   -o-background-size: contain;
-                   background-size: contain;
-               }
-           }
+  /* fit whole background image into small screen */
+  @media (max-width: 768px) {
+    body {
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+    }
+  }
+
+  .heading {
+    text-align: center;
+    margin-top: 10em;
+  }
+
+  .lead {
+    margin-top: 0.5em !important;
+  }
+
+  .card {
+    margin: auto;
+    width: 30%;
+    margin-top: 20em;
+  }
+
+  .outerForm {
+    border: 3px solid green !important;
+    padding: 0.6em 2em 2em 2em;
+    border-radius: 0.5em;
+  }
+
+  .form {
+    width: 100%;
+    text-align: left;
+  }
+
+  input {
+    width: 93%;
+    height: 2.5em;
+    padding-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1em;
+  }
+
+  label {
+    font-size: 1.2em;
+  }
+
+  .formButton {
+    height: 2.5em;
+    width: 6em;
+    font-size: 0.8em;
+    cursor: pointer;
+    border-radius: 0.6em;
+  }
+
+  .regsiterForgot {
+    text-align: left !important;
+  }
+
+  .register {
+    padding-left: 1.5em;
+    font-size: 1.2em;
+    color: #375c1a;
+    font-weight: 900;
+    font-size: 1.3em;
+  }
+
+  .buttonFrame {
+    text-align: center;
+  }
+
+  .login {
+    text-decoration: none;
+    color: #4d4d7c;
+  }
+
+  @media (max-width: 800px) {
+    .heading {
+      margin-top: 14em;
+    }
+  }
 
 
-           .col-md-4 {
-               text-align: center;
-               margin: auto;
-           }
+  @media (max-width: 800px) {
+    .card {
+      width: 24em;
+    }
+  }
 
-           @media (max-width: 800px) {
-               .row {
-                   max-width: 20em;
-                   text-align: center;
-                   margin: auto;
-               }
-           }
+  .logo {
+    width: 12rem;
+    left: 5rem;
+    position: absolute;
+    top: 2.5rem;
+  }
 
-           .heading {
-               margin-top: 7em;
-           }
+  @media (max-width: 800px) {
+    .logo {
+      margin-left: -5rem;
+    }
+  }
 
-           .col-md-4 {
-               text-align: center;
-               margin: auto;
-           }
+  @media (max-width: 600) {
+    .outerForm {
+      max-width: 15rem;
+      ;
+    }
+  }
 
-           @media (max-width: 800px) {
-               .row {
-                   max-width: 20em;
-                   text-align: center;
-                   margin: auto;
-               }
-           }
+  @media (max-width: 600) {
+    .register {
+      min-width: 25;
+    }
+  }
 
-           .outerForm {
-               border: 3px solid green !important;
-               padding: 0.6em 2em 2em 2em;
-               border-radius: 0.5em;
-           }
+  @media (max-width: 800px) {
+    .card {
+      margin-top: 18rem;
+    }
+  }
 
-           .form {
-               width: 100%;
-               text-align: left;
-           }
+  .dashboardCentre {
+    text-align: center;
+    margin: auto;
+    margin-top: 10em;
+  }
 
-           input {
-               width: 100%;
-               height: 2.5em;
-               padding-left: 1em;
-               margin-top: 1em;
-               margin-bottom: 1em;
-               font-size: 1em;
-           }
+  @media (max-width: 800px) {
+    .dashboardCentre {
+      margin-top: 30em;
+    }
+  }
 
-           label {
-               font-size: 1.2em;
-           }
 
-           .formButton {
-               margin: auto;
-               height: 2.5em;
-               width: 10em;
-               font-size: 0.8em;
-               cursor: pointer;
-               border-radius: 0.6em;
-           }
+  .homeHeading {
+    text-align: center !important;
+  }
 
-           .register {
-               padding-left: 2.5em;
-               font-size: 1.2em;
-               color: #375c1a;
-               font-weight: 900;
-               font-size: 1.3em;
-           }
+  .hiddenButton {
+    margin-top: 7em;
+  }
 
-           .buttonFrame {
-               text-align: center;
-           }
+  @media (max-width: 800px) {
+    .greeting {
+      margin-top: 0em !important;
+    }
+  }
 
-           .login {
-               text-decoration: none;
-               color: #4d4d7c;
-           }
+  @media (max-width: 800px) {
+    .hiddenButton {
+      margin-top: 7em !important;
+    }
+  }
 
-           .card {
-               margin: auto;
-               width: 30%;
-           }
-
-           @media (max-width: 800px) {
-               .heading {
-                   margin-top: 2.5em;
-               }
-           }
-
-           @media (max-width: 800px) {
-               .card {
-                   width: 24em;
-               }
-           }
-
-           @media (max-width: 800px) {
-               .hiddenButton {
-                   margin-top: -5em !important;
-               }
-           }
        </style>
