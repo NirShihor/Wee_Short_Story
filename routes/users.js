@@ -151,8 +151,8 @@ router.post("/forgot", function (req, res, next) {
           service: "Gmail",
           auth: {
             user: "nirshihor@gmail.com",
-            key=API_KEY,
-            // pass: process.env.GMAILPW, //Setting password through terminal: $ export GMAILPW=<password>
+            // key: process.env.GMAILPW,
+            pass: process.env.GMAILPW, //Setting password through terminal: $ export GMAILPW=<password>
           },
         });
         var mailOptions = {
