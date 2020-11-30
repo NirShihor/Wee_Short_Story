@@ -4,16 +4,9 @@ const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
+const https = require("https");
 
 const app = express();
-
-// set up plain http server
-const http = express();
-
-// set up a route to redirect http to https
-http.get("*", function (req, res) {
-  res.redirect("https://" + req.headers.host + req.url);
-});
 
 // Passport config
 require("./config/passport")(passport);
