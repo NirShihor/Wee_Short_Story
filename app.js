@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const flash = require("connect-flash");
 const session = require("express-session");
 const passport = require("passport");
-const https = require("https");
+const https = require("https"); //Required for https
+const path = require("path"); //Required for https
+const fs = require("fs"); //Required for https
 
 const app = express();
 
@@ -66,6 +68,7 @@ app.use(function (req, res, next) {
   next();
 });
 
+// TEMP
 // Routes
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
@@ -80,6 +83,18 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
-app.listen(port, function () {
+// app.listen(port, function () {
+//   console.log("Server started successfully");
+// });
+
+const sslserver = https.createServer(
+  {
+    key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
+    cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
+  },
+  app
+);
+
+sslserver.listen(port, function () {
   console.log("Server started successfully");
 });
