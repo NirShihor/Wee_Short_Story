@@ -6,6 +6,8 @@ const flash = require("connect-flash");
 const session = require("cookie-session");
 const passport = require("passport");
 const https = require("https"); //Required for https
+const http = require("http"); //Required for https
+
 const path = require("path"); //Required for https
 const fs = require("fs"); //Required for https
 
@@ -88,7 +90,7 @@ if (port == null || port == "") {
 //   console.log("Server started successfully");
 // });
 
-const sslserver = https.createServer(
+const sslserver = http.createServer(
   {
     key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
     cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
