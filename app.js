@@ -74,14 +74,6 @@ app.use(function (req, res, next) {
 app.use("/", require("./routes/index"));
 app.use("/users", require("./routes/users"));
 
-app.enable("trust proxy");
-app.use(function (req, res, next) {
-  if (req.secure) {
-    next();
-  } else {
-    res.redirect("https://" + req.headers.host + req.url);
-  }
-});
 //Before using heroku - server running locally
 // const PORT = process.env.PORT || 5060;
 
