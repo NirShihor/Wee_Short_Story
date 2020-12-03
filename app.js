@@ -90,7 +90,7 @@ if (port == null || port == "") {
 //   console.log("Server started successfully");
 // });
 
-const sslserver = http.createServer(
+const sslserver = https.createServer(
   {
     key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
     cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
