@@ -93,7 +93,7 @@ if (port == null || port == "") {
 // });
 
 //APP.LISTEN FOR HTTPS
-const sslserver = http.createServer(
+const sslserver = https.createServer(
   {
     key: fs.readFileSync(path.join(__dirname, "cert", "server.key")),
     cert: fs.readFileSync(path.join(__dirname, "cert", "server.crt")),
