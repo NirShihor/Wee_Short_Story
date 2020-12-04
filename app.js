@@ -86,14 +86,17 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
+
+// APP.LISTEN FOR HTTP
 // app.listen(port, function () {
 //   console.log("Server started successfully");
 // });
 
+//APP.LISTEN FOR HTTPS
 const sslserver = https.createServer(
   {
-    key: fs.readFileSync(path.join(__dirname, "cert", "key.pem")),
-    cert: fs.readFileSync(path.join(__dirname, "cert", "cert.pem")),
+    key: fs.readFileSync(path.join(__dirname, "cert", "server.key")),
+    cert: fs.readFileSync(path.join(__dirname, "cert", "server.crt")),
   },
   app
 );
